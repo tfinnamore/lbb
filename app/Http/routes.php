@@ -16,7 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/article/create', function() {
+Route::get('/article/create', function () {
   return view('article.create');
 });
 
