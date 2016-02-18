@@ -10,10 +10,17 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/article/create', function() {
+  return view('article.create');
+});
+
+Route::post('/article/store', ['uses' => 'ArticleController@store']);
 
 /*
 |--------------------------------------------------------------------------
