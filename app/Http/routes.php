@@ -14,9 +14,9 @@ Route::get('/', function () {
   return view('welcome');
 });
 
-Route::get('/article/create', ['uses' =>'ArticleController@create']);
+// Route::get('/article/create', ['uses' =>'ArticleController@create']);
 
-Route::post('/article/store', ['uses' => 'ArticleController@store']);
+// Route::post('/article/store', ['uses' => 'ArticleController@store']);
 
 /*
 |--------------------------------------------------------------------------
@@ -31,4 +31,7 @@ Route::post('/article/store', ['uses' => 'ArticleController@store']);
 
 Route::group(['middleware' => ['web']], function () {
     //
+    Route::get('/article/create', ['uses' =>'ArticleController@create']);
+
+    Route::post('/article/store', ['uses' => 'ArticleController@store']);
 });
