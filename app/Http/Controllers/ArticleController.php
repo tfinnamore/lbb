@@ -27,4 +27,10 @@ class ArticleController extends Controller
 
       return view('article.index')->with('articles', $articles);
     }
+
+    public function home(Article $article)
+    {
+      $articles = $article->select('title')->get();
+      return view('home')->with('articles', $articles);
+    }
 }
