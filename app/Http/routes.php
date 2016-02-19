@@ -10,9 +10,9 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('/', function () {
-  return view('welcome');
-});
+// Route::get('/', [function () {
+//   return view('welcome');]
+// });
 
 // Route::get('/article/create', ['uses' =>'ArticleController@create']);
 
@@ -30,8 +30,12 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
-    Route::get('/article/create', ['uses' =>'ArticleController@create']);
 
-    Route::post('/article/store', ['uses' => 'ArticleController@store']);
+    Route::get('/', ['uses' => 'ArticleController@index']);
+
+    Route::get('/create', ['uses' =>'ArticleController@create']);
+
+    Route::post('/store', ['uses' => 'ArticleController@store']);
+
+
 });
