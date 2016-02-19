@@ -36,9 +36,9 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/article', ['uses' => 'ArticleController@index']);
 
-    Route::get('/create', ['uses' =>'ArticleController@create']);
+    Route::get('/article/create', ['uses' =>'ArticleController@create']);
 
-    Route::post('/store', ['uses' => 'ArticleController@store']);
+    Route::post('/article/store', ['uses' => 'ArticleController@store']);
 
 
 });
